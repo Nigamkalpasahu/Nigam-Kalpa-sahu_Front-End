@@ -1,0 +1,21 @@
+Explain what the simple List component does.
+Ans -- The simple List component is a React component that renders an unordered list of items, where each item is represented as a list item (<li>). It receives an array of items as a prop, where each item is an object with a text property that contains the text to be displayed for that item. When an item is clicked, it is highlighted by changing its background color to green, while the other items have a red background color.
+
+To implement this behavior, the List component has two child components: SingleListItem and ListComponent.
+
+The SingleListItem component is a functional component that receives the following props:
+
+index: the index of the item in the array.
+isSelected: a boolean that indicates whether the item is selected.
+onClickHandler: a callback function that is called when the item is clicked.
+text: the text to be displayed for the item.
+The SingleListItem component renders a list item (<li>) with the text prop as its content. The background color of the item is green if it is selected (isSelected is true), and red otherwise. When the item is clicked, the onClickHandler callback is called with the index prop as its argument.
+
+The ListComponent component is also a functional component that receives the following props:
+
+items: an array of items to be displayed in the list.
+The ListComponent component has a state variable selectedIndex that keeps track of the index of the selected item. When the items prop changes, the selectedIndex state is set to null to reset the selection. The component also has a callback function handleClick that is called when an item is clicked. This function updates the selectedIndex state with the index of the clicked item.
+
+The ListComponent component renders an unordered list (<ul>) that contains one SingleListItem component for each item in the items prop. Each SingleListItem component is passed the text, index, isSelected, and onClickHandler props. The isSelected prop is set to true if the index prop matches the selectedIndex state.
+
+Overall, the List component provides a simple way to render a list of items with a selectable and highlightable behavior.
